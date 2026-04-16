@@ -197,7 +197,7 @@ export const featuredPhotos: FeaturedPhoto[] = [
   }
 ]
 
-export const homeHeroPhotoIds = ['hero-robot', 'hero-celebration', 'hero-clean']
+export const homeHeroPhotoIds = ['hero-robot']
 
 export const robotShowcaseIds = ['robot-front', 'robot-ball-load', 'robot-closeup', 'robot-matchup']
 

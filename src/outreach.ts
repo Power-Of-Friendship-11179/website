@@ -7,7 +7,7 @@ function renderPhotoCard(id: string): string {
 
   return `
     <figure class="photo-card">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -42,8 +42,8 @@ mount(
       <section class="section section-cyan">
         <header class="section-header">
           <div>
-            <p class="eyebrow">Lorem ipsum</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <p class="eyebrow">Upcoming Events</p>
+            <h2 class="section-title">Add section title for outreach events.</h2>
           </div>
         </header>
 

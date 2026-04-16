@@ -22,35 +22,35 @@ const captains: Member[] = [
 const subteams: Subteam[] = [
   {
     name: 'Mechanical Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the mechanical subteam does.'
   },
   {
     name: 'Programming Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the programming subteam does.'
   },
   {
     name: 'Business Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the business subteam does.'
   },
   {
     name: 'Electrical Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the electrical subteam does.'
   },
   {
     name: 'Outreach Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the outreach subteam does.'
   },
   {
     name: 'Design Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the design subteam does.'
   },
   {
     name: 'Media Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the media subteam does.'
   },
   {
     name: 'Safety Subteam',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    description: 'Add one or two sentences about what the safety subteam does.'
   }
 ]
 
@@ -59,7 +59,7 @@ const subteamLeads: Member[] = [
   { role: 'Vice Captain', name: 'Josh A.', photo: 'assets/josh.png' },
   { role: 'Business Lead', name: 'Avi M.', photo: 'assets/avi.png' },
   { role: 'Programming Lead', name: 'Senuk W.' },
-  { role: 'Scouting Lead', name: 'Yahavi A.', photo: 'assets/yahavi.png' },
+  { role: 'Scouting Lead', name: 'Yahavi A.', photo: 'assets/yahavi.jpg' },
   { role: 'Outreach Lead', name: 'Joanna W.', photo: 'assets/joanna.png' },
   { role: 'Design Lead', name: 'Akshay S.', photo: 'assets/akshay.jpeg', photoClass: 'photo-akshay' },
   { role: 'Media Lead', name: 'Karma M.', photo: 'assets/karma.png' },
@@ -82,7 +82,7 @@ function renderMemberCard(member: Member): string {
     <article class="member-card">
       ${
         member.photo
-          ? `<div class="member-photo-frame"><img class="member-photo ${member.photoClass ?? ''}" src="${member.photo}" alt="${member.name} headshot" /></div>`
+          ? `<div class="member-photo-frame"><img class="member-photo ${member.photoClass ?? ''}" src="${member.photo}" alt="${member.name} headshot" loading="lazy" decoding="async" /></div>`
           : `<div class="member-avatar" aria-hidden="true">${initials(member.name)}</div>`
       }
       ${member.role ? `<p class="member-role">${member.role}</p>` : ''}
@@ -96,7 +96,7 @@ function renderPhotoCard(id: string): string {
 
   return `
     <figure class="photo-card">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -114,11 +114,11 @@ mount(
         <div class="story-grid">
           <article class="story-panel">
             <p class="eyebrow">Subteams</p>
-            <h1 class="section-title">Lorem ipsum.</h1>
+            <h1 class="section-title">Add team page intro title.</h1>
             <p class="section-copy">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Add one or two sentences explaining that students can contribute in technical and non-technical roles.
             </p>
-            <p class="section-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="section-copy">Add one sentence introducing the subteams below.</p>
           </article>
 
           <div class="photo-stack">
@@ -131,7 +131,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Subteams</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Add section title for how the team is organized.</h2>
           </div>
         </header>
 
@@ -153,7 +153,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Captains</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Add section title for captains.</h2>
           </div>
         </header>
 
@@ -166,7 +166,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Subteam Leads</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Add section title for subteam leads.</h2>
           </div>
         </header>
 

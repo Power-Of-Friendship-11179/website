@@ -7,7 +7,7 @@ function renderPhotoCard(id: string, className = ''): string {
 
   return `
     <figure class="photo-card ${className}">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -45,30 +45,30 @@ mount(
       <header class="section-header">
         <div>
           <p class="eyebrow">Steps To Join</p>
-          <h2 class="section-title">Lorem ipsum.</h2>
+          <h2 class="section-title">Add section title for how students join.</h2>
         </div>
       </header>
 
       <div class="join-steps">
         <article class="join-step">
           <p class="step-num">01</p>
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Eligibility</h3>
+          <p>Add one sentence explaining who can join the team.</p>
         </article>
         <article class="join-step">
           <p class="step-num">02</p>
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Contact Coaches</h3>
+          <p>Add one sentence telling students to email the coaches.</p>
         </article>
         <article class="join-step">
           <p class="step-num">03</p>
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Registration Steps</h3>
+          <p>Add one sentence about FIRST registration, Remind, and any setup steps.</p>
         </article>
         <article class="join-step">
           <p class="step-num">04</p>
-          <h3>Lorem ipsum</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Attend Meetings</h3>
+          <p>Add one sentence about showing up, meeting subteams, and getting involved.</p>
         </article>
       </div>
     </section>
@@ -101,7 +101,7 @@ mount(
         <p class="eyebrow">Instagram</p>
         <h2 class="section-title">Check out our Instagram.</h2>
         <p class="section-copy">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Add one short sentence inviting students to follow Instagram or email questions.
         </p>
       </div>
 

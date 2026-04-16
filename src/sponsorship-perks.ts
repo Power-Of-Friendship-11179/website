@@ -7,7 +7,7 @@ function renderPhotoCard(id: string, className = ''): string {
 
   return `
     <figure class="photo-card ${className}">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -45,7 +45,7 @@ mount(
       <header class="section-header">
         <div>
           <p class="eyebrow">Sponsor Tiers</p>
-          <h2 class="section-title">Lorem ipsum.</h2>
+          <h2 class="section-title">Perks by sponsor level</h2>
         </div>
       </header>
 
@@ -116,10 +116,10 @@ mount(
 
     <section class="section cta-band section-crimson">
       <div>
-        <p class="eyebrow">Lorem ipsum</p>
-        <h2 class="section-title">Lorem ipsum.</h2>
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">Contact the team about sponsorship.</h2>
         <p class="section-copy">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Add one short sentence inviting potential sponsors to email the team with questions.
         </p>
       </div>
 

@@ -7,7 +7,7 @@ function renderPhotoCard(id: string, className = ''): string {
 
   return `
     <figure class="photo-card ${className}">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -49,18 +49,18 @@ mount(
             <div class="hero-metrics">
               <article class="metric-card">
                 <p class="metric-value">2</p>
-                <p class="metric-label">Lorem ipsum</p>
-                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="metric-label">Add stat label</p>
+                <p class="metric-note">Add one short sentence explaining what this number means.</p>
               </article>
               <article class="metric-card">
                 <p class="metric-value">9-12</p>
-                <p class="metric-label">Lorem ipsum</p>
-                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="metric-label">Add stat label</p>
+                <p class="metric-note">Add one short sentence explaining what this number means.</p>
               </article>
               <article class="metric-card">
                 <p class="metric-value">STEM</p>
-                <p class="metric-label">Lorem ipsum</p>
-                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="metric-label">Add stat label</p>
+                <p class="metric-note">Add one short sentence explaining what this number means.</p>
               </article>
             </div>
           </div>
@@ -72,16 +72,22 @@ mount(
 
                 return `
                   <article class="hero-slide ${index === 0 ? 'active' : ''}" data-slide>
-                    <img src="${photo.src}" alt="${photo.alt}" />
+                    <img
+                      src="${photo.src}"
+                      alt="${photo.alt}"
+                      loading="${index === 0 ? 'eager' : 'lazy'}"
+                      decoding="async"
+                      fetchpriority="${index === 0 ? 'high' : 'low'}"
+                    />
                   </article>
                 `
               })
               .join('')}
 
             <div class="hero-flash-card">
-              <p class="eyebrow">Lorem ipsum</p>
-              <h3>Lorem ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="eyebrow">Hero Callout</p>
+              <h3>Add short hero callout title</h3>
+              <p>Add one short sentence for the hero callout box.</p>
             </div>
           </div>
         </div>
@@ -91,7 +97,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Team 11179</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Add section title about what the team does.</h2>
           </div>
           <p class="section-copy">
             The beauty of FRC is that everyone plays their own role in many different ways. You do not need
@@ -101,16 +107,16 @@ mount(
 
         <div class="info-grid">
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Add card title for robot work</h3>
+            <p>Add one sentence about designing, building, or programming the robot.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Add card title for outreach</h3>
+            <p>Add one sentence about STEM outreach or community impact.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Add card title for student roles</h3>
+            <p>Add one sentence about how different students contribute to the team.</p>
           </article>
         </div>
       </section>
@@ -141,26 +147,26 @@ mount(
       <section class="section section-steel">
         <header class="section-header">
           <div>
-            <p class="eyebrow">Lorem ipsum</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <p class="eyebrow">Site Guide</p>
+            <h2 class="section-title">Add section title that helps visitors navigate the site.</h2>
           </div>
           <p class="section-copy">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Add one short sentence explaining what visitors can find on the pages below.
           </p>
         </header>
 
         <div class="info-grid">
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>About Us</h3>
+            <p>Add one sentence about what visitors should learn on the About Us page.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Meet The Team</h3>
+            <p>Add one sentence about what visitors should find on the Meet The Team page.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Events</h3>
+            <p>Add one sentence about what visitors should find on the Events page.</p>
           </article>
         </div>
       </section>
@@ -173,14 +179,14 @@ mount(
 
           <article class="story-panel">
             <p class="eyebrow">Community</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Add section title about outreach or community impact.</h2>
             <p class="section-copy">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Add one or two sentences about outreach, STEM access, or community impact.
             </p>
             <ul class="clean-list">
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Add one example of how the team supports STEM in the community.</li>
+              <li>Add one example of an outreach activity, event, or partnership.</li>
+              <li>Add one example of the impact the team wants visitors to remember.</li>
             </ul>
           </article>
         </div>
@@ -188,10 +194,10 @@ mount(
 
       <section class="section cta-band section-crimson">
         <div>
-          <p class="eyebrow">Lorem ipsum</p>
-          <h2 class="section-title">Lorem ipsum.</h2>
+          <p class="eyebrow">Next Step</p>
+          <h2 class="section-title">Add final call-to-action title.</h2>
           <p class="section-copy">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Add one short closing sentence telling visitors what to do next.
           </p>
         </div>
 

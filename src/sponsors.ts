@@ -7,7 +7,7 @@ function renderPhotoCard(id: string): string {
 
   return `
     <figure class="photo-card">
-      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
       <figcaption>
         <strong>${photo.title}</strong>
         <span>${photo.caption}</span>
@@ -46,15 +46,15 @@ mount(
       <section class="section section-cyan">
         <div class="info-grid">
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
+            <h3>How To Contact Us</h3>
             <p>Email us at <a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a> with any inquiries or for a breakdown of sponsorship perks, proof of our tax ID, and more.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
+            <h3>How To Donate</h3>
             <p>To donate, use the button below, write your organization's name or your name, and then hit continue.</p>
           </article>
           <article class="info-card">
-            <h3>Lorem ipsum</h3>
+            <h3>Tax Information</h3>
             <p>Sponsoring Team 11179 is tax-deductible on your federal income tax return.</p>
           </article>
         </div>
@@ -64,7 +64,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Current Partners</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Current Sponsors</h2>
           </div>
         </header>
 
@@ -72,7 +72,7 @@ mount(
           <article class="logo-panel">
             <p class="eyebrow">Power Level Sponsor</p>
             <h3>NASA</h3>
-            <img class="tier-logo nasa-tier-logo big-logo" src="assets/nasa-logo.png" alt="NASA sponsor logo" />
+            <img class="tier-logo nasa-tier-logo big-logo" src="assets/nasa-logo.png" alt="NASA sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>
 
@@ -80,7 +80,7 @@ mount(
           <article class="logo-panel">
             <p class="eyebrow">Alliance Level Sponsor</p>
             <h3>Argosy Foundation</h3>
-            <img class="tier-logo big-logo" src="assets/argosy-foundation.png" alt="Argosy Foundation sponsor logo" />
+            <img class="tier-logo big-logo" src="assets/argosy-foundation.png" alt="Argosy Foundation sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>
 
@@ -88,12 +88,12 @@ mount(
           <article class="logo-panel">
             <p class="eyebrow">Build Level Sponsor</p>
             <h3>REV Robotics</h3>
-            <img class="tier-logo big-logo" src="assets/rev-sponsor.png" alt="REV Robotics sponsor logo" />
+            <img class="tier-logo big-logo" src="assets/rev-sponsor.png" alt="REV Robotics sponsor logo" loading="lazy" decoding="async" />
           </article>
           <article class="logo-panel">
             <p class="eyebrow">Build Level Sponsor</p>
             <h3>FIRST</h3>
-            <img class="tier-logo big-logo" src="assets/first-sponsor.png" alt="FIRST sponsor logo" />
+            <img class="tier-logo big-logo" src="assets/first-sponsor.png" alt="FIRST sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>
       </section>
@@ -106,7 +106,7 @@ mount(
 
           <article class="story-panel">
             <p class="eyebrow">Contact</p>
-            <h2 class="section-title">Lorem ipsum.</h2>
+            <h2 class="section-title">Sponsor Contact Information</h2>
             <ul class="clean-list">
               <li><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a></li>
               <li><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a></li>
