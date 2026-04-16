@@ -6,10 +6,11 @@ export type NavItem = {
 
 const navItems: NavItem[] = [
   { href: 'index.html', label: 'Home', id: 'home' },
-  { href: 'about.html', label: 'About', id: 'about' },
-  { href: 'team.html', label: 'Team', id: 'team' },
-  { href: 'outreach.html', label: 'Outreach', id: 'outreach' },
-  { href: 'sponsors.html', label: 'Sponsors', id: 'sponsors' }
+  { href: 'sponsors.html', label: 'Sponsors', id: 'sponsors' },
+  { href: 'about.html', label: 'About Us', id: 'about' },
+  { href: 'team.html', label: 'Meet The Team', id: 'team' },
+  { href: 'join.html', label: 'Joining The Team', id: 'join' },
+  { href: 'outreach.html', label: 'Events', id: 'outreach' }
 ]
 
 export function renderPage(pageId: string, content: string): string {
@@ -35,31 +36,32 @@ export function renderPage(pageId: string, content: string): string {
           ${nav}
         </nav>
 
-        <a class="header-cta" href="join.html">Get Involved</a>
+        <a class="header-cta" href="sponsorship-perks.html">Sponsorship Perks</a>
       </header>
 
       ${content}
 
       <footer class="site-footer">
         <section class="footer-card footer-card-cyan">
-          <p class="eyebrow">Base Camp</p>
-          <h3>Apex Friendship High School</h3>
-          <p>Student-led robotics, engineering, strategy, media, and outreach.</p>
+          <p class="eyebrow">Team 11179</p>
+          <h3>The Power of Friendship</h3>
+          <p>Team 11179, The Power of Friendship, is an FRC team located in Apex, NC.</p>
         </section>
 
         <section class="footer-card footer-card-gold">
-          <p class="eyebrow">Contact</p>
+          <p class="eyebrow">Coach Emails</p>
           <ul class="footer-list">
             <li><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a></li>
             <li><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a></li>
-            <li><a href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">Instagram</a></li>
           </ul>
         </section>
 
         <section class="footer-card footer-card-crimson">
-          <p class="eyebrow">Season Signal</p>
-          <h3>Rookie season. Legit momentum.</h3>
-          <p>Wake County #1, Wake County #2, and the North Carolina State Championship all in year one.</p>
+          <p class="eyebrow">Contact</p>
+          <ul class="footer-list">
+            <li><a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">Instagram</a></li>
+          </ul>
         </section>
       </footer>
     </main>

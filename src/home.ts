@@ -1,13 +1,5 @@
 import './style.css'
-import {
-  galleryFilterIds,
-  homeHeroPhotoIds,
-  photoById,
-  robotShowcaseIds,
-  seasonEvents,
-  seasonStats,
-  teamShowcaseIds
-} from './season'
+import { homeHeroPhotoIds, photoById, teamShowcaseIds } from './season'
 import { mount, renderPage } from './site'
 
 function renderPhotoCard(id: string, className = ''): string {
@@ -33,39 +25,43 @@ mount(
         <div class="hero-stage">
           <div class="hero-copy">
             <div>
-              <p class="eyebrow">Apex Friendship High School • North Carolina • FRC 11179</p>
-              <h1 class="hero-title">Rookie year. Real momentum.</h1>
+              <p class="eyebrow">Apex Friendship High School • Apex, NC • FRC 11179</p>
+              <h1 class="hero-title">The Power of Friendship</h1>
               <p class="hero-lead">
-                The Power of Friendship did not look like a first-year program. Team 11179
-                went from rookie debut to a state-championship appearance, collected major
-                awards at every stop, and finished its first season ranked 20th in North Carolina.
+                Team 11179, The Power of Friendship, is an FRC team located in Apex, NC. Our mission is
+                to inspire students of all backgrounds to explore STEM and make a positive impact on our
+                K-12 campus and community.
               </p>
 
               <div class="button-row">
                 <a class="button button-primary" href="join.html">Join The Team</a>
-                <a class="button button-secondary" href="sponsors.html">Back The Build</a>
-                <a class="button button-ghost" href="team.html">Meet The Crew</a>
+                <a class="button button-secondary" href="team.html">Meet The Team</a>
+                <a class="button button-ghost" href="sponsors.html">Become A Sponsor</a>
               </div>
 
               <div class="data-strip">
-                <span class="data-pill">Wake County #1: Team Spirit Award</span>
-                <span class="data-pill">Wake County #2: Rookie All-Star Award</span>
-                <span class="data-pill">NC States: Rising All-Star Award</span>
+                <span class="data-pill">Apex Friendship High School</span>
+                <span class="data-pill">FIRST Robotics Competition Team 11179</span>
+                <span class="data-pill">K-12 Campus And Community Impact</span>
               </div>
             </div>
 
             <div class="hero-metrics">
-              ${seasonStats
-                .map(
-                  (stat) => `
-                    <article class="metric-card">
-                      <p class="metric-value">${stat.value}</p>
-                      <p class="metric-label">${stat.label}</p>
-                      <p class="metric-note">${stat.note}</p>
-                    </article>
-                  `
-                )
-                .join('')}
+              <article class="metric-card">
+                <p class="metric-value">2</p>
+                <p class="metric-label">Lorem ipsum</p>
+                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-value">9-12</p>
+                <p class="metric-label">Lorem ipsum</p>
+                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-value">STEM</p>
+                <p class="metric-label">Lorem ipsum</p>
+                <p class="metric-note">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </article>
             </div>
           </div>
 
@@ -83,9 +79,9 @@ mount(
               .join('')}
 
             <div class="hero-flash-card">
-              <p class="eyebrow">Season Summary</p>
-              <h3>2 Districts + States</h3>
-              <p>Quarterfinalists. Semifinalists. Rising All-Star at the state championship.</p>
+              <p class="eyebrow">Lorem ipsum</p>
+              <h3>Lorem ipsum</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
         </div>
@@ -94,65 +90,46 @@ mount(
       <section class="section section-crimson">
         <header class="section-header">
           <div>
-            <p class="eyebrow">Season Highlights</p>
-            <h2 class="section-title">Exact results, front and center.</h2>
+            <p class="eyebrow">Team 11179</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
           <p class="section-copy">
-            This season needs to read like a real competitive arc: strong first event, faster second event,
-            then a state-level finish that made the trajectory obvious.
+            The beauty of FRC is that everyone plays their own role in many different ways. You do not need
+            expertise in everything, and there are plenty of non-technical roles that still help the team.
           </p>
         </header>
 
-        <div class="results-grid">
-          ${seasonEvents
-            .map((event) => {
-              const photo = photoById(event.photoId)
-
-              return `
-                <article class="result-card">
-                  <img class="result-photo" src="${photo.src}" alt="${photo.alt}" loading="lazy" />
-                  <div class="result-body">
-                    <p class="eyebrow">2026 Season Stop</p>
-                    <h3>${event.title}</h3>
-                    <p class="result-line"><span>Awards Won:</span> ${event.award}</p>
-                    ${
-                      event.performance
-                        ? `<p class="result-line"><span>Performance:</span> ${event.performance}</p>`
-                        : ''
-                    }
-                    <p class="result-summary">${event.summary}</p>
-                  </div>
-                </article>
-              `
-            })
-            .join('')}
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
         </div>
       </section>
 
       <section class="section section-cyan">
         <div class="story-grid">
           <article class="story-panel">
-            <p class="eyebrow">Who We Are</p>
-            <h2 class="section-title">Not a generic club site. A team with direction.</h2>
+            <p class="eyebrow">Competitions</p>
+            <h2 class="section-title">Two competitions so far.</h2>
             <p class="section-copy">
-              The story is simple: 11179 builds with intent, competes hard, and already looks like a program
-              that belongs at serious events. The site should reflect that same standard.
+              We have had two competitions so far. These competitions were a great place to learn, have fun,
+              and get inspired by the many wonderful teams we were competing with.
             </p>
 
-            <div class="value-stack">
-              <article class="value-card">
-                <h3>Built to compete</h3>
-                <p>Engineering choices, match prep, and pit presence all need to feel deliberate.</p>
-              </article>
-              <article class="value-card">
-                <h3>Culture with edge</h3>
-                <p>The team personality matters, but it needs to read as confident and credible, not corny.</p>
-              </article>
-              <article class="value-card">
-                <h3>Just getting started</h3>
-                <p>This rookie season was the opening statement, not the ceiling.</p>
-              </article>
-            </div>
+            <ul class="clean-list">
+              <li>03/06-03/08 Competition: the team created its own alliance and finished fourth overall.</li>
+              <li>03/20-03/22 Competition: the team worked through major electrical issues and finished in third place.</li>
+              <li>First North Carolina State Championship: coming soon.</li>
+            </ul>
           </article>
 
           <div class="photo-stack">
@@ -164,17 +141,27 @@ mount(
       <section class="section section-steel">
         <header class="section-header">
           <div>
-            <p class="eyebrow">Robot / Engineering</p>
-            <h2 class="section-title">Show the machine like it earned the spotlight.</h2>
+            <p class="eyebrow">Lorem ipsum</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
           <p class="section-copy">
-            The robot gallery should focus on the shots that actually communicate build quality,
-            mechanism intent, and match context.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </header>
 
-        <div class="media-grid media-grid-four">
-          ${robotShowcaseIds.map((id) => renderPhotoCard(id)).join('')}
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </article>
         </div>
       </section>
 
@@ -185,70 +172,32 @@ mount(
           </div>
 
           <article class="story-panel">
-            <p class="eyebrow">Team Culture</p>
-            <h2 class="section-title">The energy is part of the brand.</h2>
+            <p class="eyebrow">Community</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
             <p class="section-copy">
-              The strongest team photos do more than prove members were in the room. They show chemistry,
-              confidence, and the kind of buy-in that makes a rookie team dangerous fast.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
             <ul class="clean-list">
-              <li>Use celebration and driver-station moments to show competitiveness.</li>
-              <li>Use sharp group shots to establish credibility and identity.</li>
-              <li>Keep novelty photos off the public-facing gallery unless they add real character.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section gallery-shell section-spectrum" data-gallery>
-        <header class="section-header">
-          <div>
-            <p class="eyebrow">Photo Gallery</p>
-            <h2 class="section-title">Curated, not crowded.</h2>
-          </div>
-          <p class="section-copy">
-            The public gallery should only carry photos that strengthen the team’s image. Robot, Team, and Flicks
-            are filterable below. Unusable shots stay out of the site.
-          </p>
-        </header>
-
-        <div class="filter-row">
-          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="robot" aria-pressed="false">Robot</button>
-          <button class="filter-btn" data-filter="team" aria-pressed="false">Team</button>
-          <button class="filter-btn" data-filter="flicks" aria-pressed="false">Flicks</button>
-        </div>
-
-        <div class="gallery-grid">
-          ${galleryFilterIds
-            .map((id) => {
-              const photo = photoById(id)
-
-              return `
-                <figure class="gallery-card" data-category="${photo.category}">
-                  <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
-                  <figcaption>
-                    <strong>${photo.title}</strong>
-                  </figcaption>
-                </figure>
-              `
-            })
-            .join('')}
-        </div>
-      </section>
-
       <section class="section cta-band section-crimson">
         <div>
-          <p class="eyebrow">Next Move</p>
-          <h2 class="section-title">Join the build or help power the next season.</h2>
+          <p class="eyebrow">Lorem ipsum</p>
+          <h2 class="section-title">Lorem ipsum.</h2>
           <p class="section-copy">
-            The site should close with action: new members, sponsors, and supporters should know exactly where to go next.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
         <div class="cta-panel">
-          <a class="button button-primary" href="join.html">Start Here</a>
-          <a class="button button-secondary" href="sponsors.html">Sponsor 11179</a>
+          <a class="button button-primary" href="join.html">Joining The Team</a>
+          <a class="button button-secondary" href="sponsors.html">Become A Sponsor</a>
           ${renderPhotoCard('team-hype', 'compact')}
         </div>
       </section>

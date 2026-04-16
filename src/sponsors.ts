@@ -1,5 +1,5 @@
 import './style.css'
-import { photoById, seasonStats } from './season'
+import { photoById } from './season'
 import { mount, renderPage } from './site'
 
 function renderPhotoCard(id: string): string {
@@ -25,15 +25,15 @@ mount(
         <div class="story-grid">
           <article class="story-panel">
             <p class="eyebrow">Sponsors</p>
-            <h1 class="section-title">Back a team that already has proof of concept.</h1>
+            <h1 class="section-title">Become a sponsor</h1>
             <p class="section-copy">
-              Sponsors are not just logos on a page. They are part of what allowed Team 11179 to build,
-              compete, reach the state championship, and establish itself this quickly in North Carolina.
+              Thank you so much for considering sponsoring us. Becoming a sponsor is tax-deductible, very
+              easy, and only requires two simple steps.
             </p>
 
             <div class="button-row">
               <a class="button button-primary" href="sponsorship-perks.html">View Sponsorship Perks</a>
-              <a class="button button-secondary" href="mailto:rsettle@wcpss.net?subject=FRC%2011179%20Sponsorship%20Interest">Become A Sponsor</a>
+              <a class="button button-secondary" href="mailto:frcteam11179@gmail.com?subject=FRC%2011179%20Sponsorship%20Interest">Email The Team</a>
             </div>
           </article>
 
@@ -45,17 +45,18 @@ mount(
 
       <section class="section section-cyan">
         <div class="info-grid">
-          ${seasonStats
-            .map(
-              (stat) => `
-                <article class="info-card">
-                  <p class="metric-value">${stat.value}</p>
-                  <h3>${stat.label}</h3>
-                  <p>${stat.note}</p>
-                </article>
-              `
-            )
-            .join('')}
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Email us at <a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a> with any inquiries or for a breakdown of sponsorship perks, proof of our tax ID, and more.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>To donate, use the button below, write your organization's name or your name, and then hit continue.</p>
+          </article>
+          <article class="info-card">
+            <h3>Lorem ipsum</h3>
+            <p>Sponsoring Team 11179 is tax-deductible on your federal income tax return.</p>
+          </article>
         </div>
       </section>
 
@@ -63,7 +64,7 @@ mount(
         <header class="section-header">
           <div>
             <p class="eyebrow">Current Partners</p>
-            <h2 class="section-title">The companies and organizations behind the season.</h2>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
         </header>
 
@@ -104,17 +105,14 @@ mount(
           </div>
 
           <article class="story-panel">
-            <p class="eyebrow">Partnership Value</p>
-            <h2 class="section-title">Why support 11179 now.</h2>
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
             <ul class="clean-list">
-              <li>Your support funds robot development, tools, travel, and student opportunity.</li>
-              <li>The team is already producing visible results, which makes new support immediately meaningful.</li>
-              <li>Sponsorship also extends into community outreach and STEM access beyond competition weekends.</li>
+              <li><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a></li>
+              <li><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a></li>
+              <li><a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a></li>
+              <li><a href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">Instagram</a></li>
             </ul>
-            <p class="section-copy">
-              Contact the team at <a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a> or
-              <a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a> to start the conversation.
-            </p>
           </article>
         </div>
       </section>

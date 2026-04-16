@@ -25,44 +25,43 @@ export type SeasonEvent = {
 
 export const seasonStats: SeasonStat[] = [
   {
-    value: '20th',
-    label: 'Rank In NC',
-    note: 'Finished our first season ranked 20th in North Carolina.'
+    value: 'Apex',
+    label: 'Location',
+    note: 'Team 11179 is located in Apex, NC.'
   },
   {
-    value: '3',
-    label: 'Awards',
-    note: 'Team Spirit, Rookie All-Star, and Rising All-Star.'
+    value: 'K-12',
+    label: 'Community',
+    note: 'The team works to make a positive impact on its K-12 campus and community.'
   },
   {
-    value: '3',
-    label: 'Events',
-    note: 'Two FNC district events plus the state championship.'
+    value: '2',
+    label: 'Competitions',
+    note: 'The team has completed two competitions so far.'
   }
 ]
 
 export const seasonEvents: SeasonEvent[] = [
   {
-    title: 'FNC District Wake County Event #1',
-    award: 'Team Spirit Award',
-    performance: 'Quarterfinalists',
+    title: '03/06-03/08 Competition',
+    award: 'Created our own alliance and finished fourth overall',
+    performance: 'First competition',
     summary:
-      'The team opened its rookie campaign with energy, execution, and a quarterfinal run that put 11179 on the map.',
+      'The first competition gave the team a strong first look at FRC and many ideas for how to improve the robot.',
     photoId: 'pit-handshake'
   },
   {
-    title: 'FNC District Wake County Event #2',
-    award: 'Rookie All-Star Award',
-    performance: 'Semifinalists',
+    title: '03/20-03/22 Competition',
+    award: 'Third place finish',
+    performance: 'Second competition',
     summary:
-      'Wake County #2 was the breakthrough weekend: stronger playoff performance, sharper presence, and a Rookie All-Star banner.',
+      'The team worked through robot disconnections and major electrical repairs before finishing in third place.',
     photoId: 'team-embrace'
   },
   {
     title: 'FIRST North Carolina State Championship',
-    award: 'Rising All-Star Award',
-    summary:
-      'The state championship validated the trajectory: 11179 showed up with credibility, culture, and momentum that carried beyond the rookie label.',
+    award: 'Coming soon',
+    summary: 'The team is preparing for the state championship.',
     photoId: 'drive-win'
   }
 ]
@@ -70,130 +69,130 @@ export const seasonEvents: SeasonEvent[] = [
 export const featuredPhotos: FeaturedPhoto[] = [
   {
     id: 'hero-robot',
-    title: 'Robot Surrounded By Traffic',
+    title: 'Robot On The Field',
     src: 'assets/season/hero-robot.jpg',
     alt: 'Team 11179 robot surrounded by yellow game pieces on the field',
-    caption: 'Field-ready and built to get through traffic.',
+    caption: 'Team 11179 robot during competition.',
     category: 'flicks'
   },
   {
     id: 'hero-celebration',
-    title: 'Scoreboard High Fives',
+    title: 'Team Celebration',
     src: 'assets/season/hero-celebration.jpg',
     alt: 'Team 11179 members high-fiving at the driver station under the 11179 sign',
-    caption: 'Proof the rookie season was real, not theoretical.',
+    caption: 'Team members celebrating during a match.',
     category: 'flicks'
   },
   {
     id: 'hero-clean',
-    title: 'Clean Cycle',
+    title: 'Match Photo',
     src: 'assets/season/hero-clean.jpg',
     alt: 'Team 11179 high-fiving other teams near a driver station scoreboard that reads clean',
-    caption: 'Clean cycles, loud reactions, and real match pressure.',
+    caption: 'Competition photo from the driver station.',
     category: 'flicks'
   },
   {
     id: 'team-embrace',
-    title: 'Semifinal Energy',
+    title: 'Team Celebration',
     src: 'assets/season/team-embrace.jpg',
     alt: 'Team 11179 students celebrating together in the pit area',
-    caption: 'One of the strongest team-culture photos from the season.',
+    caption: 'Students celebrating together in the pit area.',
     category: 'flicks'
   },
   {
     id: 'pit-handshake',
-    title: 'Pit Connection',
+    title: 'Pit Photo',
     src: 'assets/season/pit-handshake.jpg',
     alt: 'Team 11179 students interacting with another student team near the field',
-    caption: 'Competition is performance and presence, not just hardware.',
+    caption: 'Team members with another student team at competition.',
     category: 'team'
   },
   {
     id: 'team-heart',
-    title: 'Heart Window',
+    title: 'Team Photo',
     src: 'assets/season/team-heart.jpg',
     alt: 'Three Team 11179 members making heart shapes at the driver station glass',
-    caption: 'Culture without losing the edge.',
+    caption: 'Team members at the driver station.',
     category: 'team'
   },
   {
     id: 'team-group',
-    title: 'Drive Team Group Portrait',
+    title: 'Group Photo',
     src: 'assets/season/team-group.jpg',
     alt: 'Group photo of Team 11179 students in blue shirts at competition',
-    caption: 'A sharp team portrait for about and team storytelling.',
+    caption: 'Group photo of Team 11179 students.',
     category: 'team'
   },
   {
     id: 'family-moment',
-    title: 'Community Moment',
+    title: 'Community Photo',
     src: 'assets/season/family-moment.jpg',
     alt: 'Team member standing with family and younger kids at a competition venue',
-    caption: 'Good for outreach, family, and community-facing moments.',
+    caption: 'Community-facing team photo.',
     category: 'team'
   },
   {
     id: 'team-portrait',
-    title: 'Safety Glasses Portrait',
+    title: 'Portrait Photo',
     src: 'assets/season/team-portrait.jpg',
     alt: 'Close-up portrait of a Team 11179 student wearing safety glasses',
-    caption: 'Close-up portrait with personality and competition context.',
+    caption: 'Portrait of a Team 11179 student.',
     category: 'team'
   },
   {
     id: 'team-hype',
-    title: 'Hype Shot',
+    title: 'Team Reaction',
     src: 'assets/season/team-hype.jpg',
     alt: 'Team 11179 student reacting energetically at competition',
-    caption: 'High-energy culture shot for the team page.',
+    caption: 'Reaction photo from competition.',
     category: 'flicks'
   },
   {
     id: 'robot-front',
-    title: 'Robot Front Profile',
+    title: 'Robot Front',
     src: 'assets/season/robot-front.jpg',
     alt: 'Front-facing image of Team 11179 robot with yellow game pieces around it',
-    caption: 'Best clean robot profile from the season library.',
+    caption: 'Front-facing image of the robot.',
     category: 'robot'
   },
   {
     id: 'robot-matchup',
-    title: 'Robot Matchup',
+    title: 'Robot Match',
     src: 'assets/season/robot-matchup.jpg',
     alt: 'Team 11179 robot on the field near another robot and scattered game pieces',
-    caption: 'Competition context makes the engineering feel real.',
+    caption: 'Robot on the field during a match.',
     category: 'robot'
   },
   {
     id: 'robot-closeup',
-    title: 'Mechanism Closeup',
+    title: 'Robot Closeup',
     src: 'assets/season/robot-closeup.jpg',
     alt: 'Close-up shot of a Team 11179 robot mechanism',
-    caption: 'Tighter mechanism framing for engineering storytelling.',
+    caption: 'Close-up of a robot mechanism.',
     category: 'robot'
   },
   {
     id: 'robot-ball-load',
-    title: 'Game Piece Control',
+    title: 'Robot With Game Pieces',
     src: 'assets/season/robot-ball-load.jpg',
     alt: 'Team 11179 robot carrying several yellow game pieces on the field',
-    caption: 'Shows the robot doing actual work instead of sitting static.',
+    caption: 'Robot carrying game pieces during competition.',
     category: 'robot'
   },
   {
     id: 'robot-lane',
-    title: 'Field Lane Shot',
+    title: 'Robot Driving',
     src: 'assets/season/robot-lane.jpg',
     alt: 'Team 11179 robot driving on the field with yellow game pieces nearby',
-    caption: 'Useful secondary action shot for the robot section.',
+    caption: 'Robot driving on the field.',
     category: 'robot'
   },
   {
     id: 'drive-win',
-    title: 'Driver Station Win',
+    title: 'Driver Station Photo',
     src: 'assets/season/drive-win.jpg',
     alt: 'Team 11179 celebrating with another team inside the driver station after a clean cycle',
-    caption: 'Best image for the state-championship result card.',
+    caption: 'Team celebration in the driver station.',
     category: 'flicks'
   }
 ]

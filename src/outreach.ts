@@ -24,27 +24,13 @@ mount(
       <section class="section section-gold">
         <div class="story-grid">
           <article class="story-panel">
-            <p class="eyebrow">Outreach</p>
-            <h1 class="section-title">Competition credibility should feed community impact.</h1>
+            <p class="eyebrow">Events</p>
+            <h1 class="section-title">Outreach</h1>
             <p class="section-copy">
-              Part of the team mission is opening the door to STEM for younger students and families.
-              Outreach matters more when the team looks credible doing it, so this page keeps the same polished
-              visual standard as the rest of the site.
+              This page highlights the outreach events our team has led to share STEM and robotics with our
+              community. Part of our mission statement is to provide STEM opportunities to the youth in our
+              community, and we conduct several outreach events to fulfill that mission.
             </p>
-            <div class="value-stack">
-              <article class="value-card">
-                <h3>Robot demos</h3>
-                <p>Use the robot as a conversation starter for design, programming, and engineering.</p>
-              </article>
-              <article class="value-card">
-                <h3>Student leadership</h3>
-                <p>Members explain the build process, share their experience, and make STEM feel reachable.</p>
-              </article>
-              <article class="value-card">
-                <h3>Campus and community</h3>
-                <p>Every event should reinforce that the team belongs in the school and the larger local robotics scene.</p>
-              </article>
-            </div>
           </article>
 
           <div class="photo-stack">
@@ -56,23 +42,26 @@ mount(
       <section class="section section-cyan">
         <header class="section-header">
           <div>
-            <p class="eyebrow">How We Show Up</p>
-            <h2 class="section-title">Outreach should feel inviting and legit at the same time.</h2>
+            <p class="eyebrow">Lorem ipsum</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
         </header>
 
         <div class="info-grid">
           <article class="info-card">
-            <h3>Interactive demos</h3>
-            <p>Let younger students see the robot close-up, ask questions, and connect real engineering to something memorable.</p>
+            <h3>Lacy Elementary School STEM Night</h3>
+            <p>1/15/26</p>
+            <p>Coming soon!</p>
           </article>
           <article class="info-card">
-            <h3>STEM storytelling</h3>
-            <p>Explain how strategy, fabrication, code, and teamwork all connect inside one competition season.</p>
+            <h3>Academy of Engineering Expo</h3>
+            <p>2/25/26</p>
+            <p>Coming soon!</p>
           </article>
           <article class="info-card">
-            <h3>Recruitment pipeline</h3>
-            <p>Outreach is also how the team builds future interest, future members, and future confidence in STEM.</p>
+            <h3>Woods Creek Elementary STEAM Night</h3>
+            <p>3/26/26</p>
+            <p>Coming soon!</p>
           </article>
         </div>
       </section>
@@ -84,16 +73,17 @@ mount(
           </div>
 
           <article class="story-panel">
-            <p class="eyebrow">Why It Matters</p>
-            <h2 class="section-title">The team brand should travel beyond the field.</h2>
+            <p class="eyebrow">Competitions</p>
+            <h2 class="section-title">Competitions</h2>
             <p class="section-copy">
-              A strong outreach page is not filler. It shows that 11179 is building something durable:
-              a team that competes hard, represents itself well, and brings other people into the process.
+              We have had two competitions so far. These competitions were a great place to learn, have fun,
+              and get inspired by the many wonderful teams we were competing with. These events had the kind
+              of atmosphere that showed the coopertition and gracious professionalism that are central to FIRST.
             </p>
             <ul class="clean-list">
-              <li>Students act as mentors and translators for STEM concepts.</li>
-              <li>Families and younger students get a direct look at what the team is building.</li>
-              <li>Every outreach moment reinforces the long-term identity of the program.</li>
+              <li><strong>03/06-03/08 Competition:</strong> Our first competition was a great first look into what it means to be on an FRC team. By the end of qualification rounds, we created our own alliance and finished fourth in the competition.</li>
+              <li><strong>03/20-03/22 Competition:</strong> Our second competition was more stressful. The robot kept disconnecting during matches and we had to replace most of the electrical system, but the team still earned a third place finish.</li>
+              <li><strong>First North Carolina State Championship:</strong> Coming soon!</li>
             </ul>
           </article>
         </div>

@@ -9,31 +9,62 @@ type Member = {
   photoClass?: string
 }
 
+type Subteam = {
+  name: string
+  description: string
+}
+
 const captains: Member[] = [
   { name: 'Dhruv M.', role: 'Co-Captain', photo: 'assets/dhruv.png' },
   { name: 'Dhanvin P.', role: 'Co-Captain', photo: 'assets/dhanvin.png' }
 ]
 
+const subteams: Subteam[] = [
+  {
+    name: 'Mechanical Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Programming Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Business Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Electrical Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Outreach Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Design Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Media Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    name: 'Safety Subteam',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  }
+]
+
 const subteamLeads: Member[] = [
-  { role: 'Mechanical Lead Captain', name: 'Ted B.', photo: 'assets/ted.png' },
-  { role: 'Mechanical Lead Vice-Captain', name: 'Josh A.', photo: 'assets/josh.png' },
+  { role: 'Mechanical Lead', name: 'Ted B.', photo: 'assets/ted.png' },
+  { role: 'Vice Captain', name: 'Josh A.', photo: 'assets/josh.png' },
   { role: 'Business Lead', name: 'Avi M.', photo: 'assets/avi.png' },
   { role: 'Programming Lead', name: 'Senuk W.' },
+  { role: 'Scouting Lead', name: 'Yahavi A.', photo: 'assets/yahavi.png' },
   { role: 'Outreach Lead', name: 'Joanna W.', photo: 'assets/joanna.png' },
   { role: 'Design Lead', name: 'Akshay S.', photo: 'assets/akshay.jpeg', photoClass: 'photo-akshay' },
   { role: 'Media Lead', name: 'Karma M.', photo: 'assets/karma.png' },
   { role: 'Electrical Lead', name: 'Matthew T.', photo: 'assets/matthew.png' },
   { role: 'Safety Lead', name: 'Chelsea B.' }
-]
-
-const founders: Member[] = [
-  { name: 'Dhruv M.', photo: 'assets/dhruv.png' },
-  { name: 'Dhanvin P.', photo: 'assets/dhanvin.png' },
-  { name: 'Avi M.', photo: 'assets/avi.png' },
-  { name: 'Joshua A.' },
-  { name: 'Ritvik S.' },
-  { name: 'Sandeep J.', photo: 'assets/sandeep.png' },
-  { name: 'Chelsea B.' }
 ]
 
 function initials(name: string): string {
@@ -82,22 +113,12 @@ mount(
       <section class="section section-crimson">
         <div class="story-grid">
           <article class="story-panel">
-            <p class="eyebrow">The Team</p>
-            <h1 class="section-title">Students who make the team feel alive.</h1>
+            <p class="eyebrow">Subteams</p>
+            <h1 class="section-title">Lorem ipsum.</h1>
             <p class="section-copy">
-              The strongest team page needs more than names in boxes. It should show leadership, chemistry,
-              and the mix of technical focus and personality that powered the rookie season.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
-            <div class="value-stack">
-              <article class="value-card">
-                <h3>Leadership on the floor</h3>
-                <p>From drive team to pit communication, members are visible in the work and the results.</p>
-              </article>
-              <article class="value-card">
-                <h3>Subteams with ownership</h3>
-                <p>Mechanical, electrical, programming, business, outreach, design, and media each carry real responsibility.</p>
-              </article>
-            </div>
+            <p class="section-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </article>
 
           <div class="photo-stack">
@@ -109,8 +130,30 @@ mount(
       <section class="section section-cyan">
         <header class="section-header">
           <div>
+            <p class="eyebrow">Subteams</p>
+            <h2 class="section-title">Lorem ipsum.</h2>
+          </div>
+        </header>
+
+        <div class="perk-grid">
+          ${subteams
+            .map(
+              (subteam) => `
+                <article class="perk-card">
+                  <h3>${subteam.name}</h3>
+                  <p>${subteam.description}</p>
+                </article>
+              `
+            )
+            .join('')}
+        </div>
+      </section>
+
+      <section class="section section-spectrum">
+        <header class="section-header">
+          <div>
             <p class="eyebrow">Captains</p>
-            <h2 class="section-title">Set the pace.</h2>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
         </header>
 
@@ -119,51 +162,16 @@ mount(
         </div>
       </section>
 
-      <section class="section section-spectrum">
+      <section class="section section-gold">
         <header class="section-header">
           <div>
             <p class="eyebrow">Subteam Leads</p>
-            <h2 class="section-title">Run the build, the code, and the story.</h2>
+            <h2 class="section-title">Lorem ipsum.</h2>
           </div>
         </header>
 
         <div class="member-grid member-grid-three">
           ${subteamLeads.map((member) => renderMemberCard(member)).join('')}
-        </div>
-      </section>
-
-      <section class="section section-gold">
-        <div class="story-grid reverse">
-          <div class="photo-stack">
-            ${['team-heart', 'pit-handshake'].map((id) => renderPhotoCard(id)).join('')}
-          </div>
-
-          <article class="story-panel">
-            <p class="eyebrow">Culture</p>
-            <h2 class="section-title">Serious about the work, not stiff about the atmosphere.</h2>
-            <p class="section-copy">
-              The team photos that make the cut are the ones that show real chemistry without weakening the team’s image.
-              That balance matters. It is part of why 11179 feels hungry instead of generic.
-            </p>
-            <ul class="clean-list">
-              <li>Driver-station reactions show competitive emotion.</li>
-              <li>Group photos establish identity and cohesion.</li>
-              <li>Sharp candid shots keep the site from feeling staged.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-steel">
-        <header class="section-header">
-          <div>
-            <p class="eyebrow">Founders</p>
-            <h2 class="section-title">The people who got it off the ground.</h2>
-          </div>
-        </header>
-
-        <div class="member-grid member-grid-three">
-          ${founders.map((member) => renderMemberCard(member)).join('')}
         </div>
       </section>
     `
