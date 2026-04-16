@@ -1,123 +1,257 @@
 import './style.css'
+import {
+  galleryFilterIds,
+  homeHeroPhotoIds,
+  photoById,
+  robotShowcaseIds,
+  seasonEvents,
+  seasonStats,
+  teamShowcaseIds
+} from './season'
 import { mount, renderPage } from './site'
 
+function renderPhotoCard(id: string, className = ''): string {
+  const photo = photoById(id)
+
+  return `
+    <figure class="photo-card ${className}">
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <figcaption>
+        <strong>${photo.title}</strong>
+        <span>${photo.caption}</span>
+      </figcaption>
+    </figure>
+  `
+}
+
 mount(
+  'home',
   renderPage(
     'home',
-    'The Power of Friendship',
-    'Team 11179 is an FRC team located in Apex, NC. Our mission is to inspire students of all backgrounds to explore STEM and make a positive impact on our K-12 campus and community!',
     `
-    <section class="home-frame">
-      <div class="home-hero-grid">
-        <article class="hero-main-panel">
-          <p class="panel-label">What we do</p>
-          <h2>Build. Compete. Grow.</h2>
-          <p>
-            Students lead real robot projects from design to competition, while
-            building technical skills, confidence, and community impact.
-          </p>
-          <div class="hero-actions">
-            <a class="cta" href="join.html">Join the team</a>
-            <a class="home-link-btn" href="team.html">Meet the team</a>
+      <section class="section hero-section section-spectrum">
+        <div class="hero-stage">
+          <div class="hero-copy">
+            <div>
+              <p class="eyebrow">Apex Friendship High School • North Carolina • FRC 11179</p>
+              <h1 class="hero-title">Rookie year. Real momentum.</h1>
+              <p class="hero-lead">
+                The Power of Friendship did not look like a first-year program. Team 11179
+                went from rookie debut to a state-championship appearance, collected major
+                awards at every stop, and finished its first season ranked 20th in North Carolina.
+              </p>
+
+              <div class="button-row">
+                <a class="button button-primary" href="join.html">Join The Team</a>
+                <a class="button button-secondary" href="sponsors.html">Back The Build</a>
+                <a class="button button-ghost" href="team.html">Meet The Crew</a>
+              </div>
+
+              <div class="data-strip">
+                <span class="data-pill">Wake County #1: Team Spirit Award</span>
+                <span class="data-pill">Wake County #2: Rookie All-Star Award</span>
+                <span class="data-pill">NC States: Rising All-Star Award</span>
+              </div>
+            </div>
+
+            <div class="hero-metrics">
+              ${seasonStats
+                .map(
+                  (stat) => `
+                    <article class="metric-card">
+                      <p class="metric-value">${stat.value}</p>
+                      <p class="metric-label">${stat.label}</p>
+                      <p class="metric-note">${stat.note}</p>
+                    </article>
+                  `
+                )
+                .join('')}
+            </div>
           </div>
-        </article>
 
-        <article class="hero-side-panel">
-          <p class="panel-label">Build sessions</p>
-          <h3>Room 4222</h3>
-          <ul class="clean-list">
-            <li>2:30-5 PM on Tuesdays-Thursdays</li>
-            <li>9-4 PM on Saturdays</li>
-          </ul>
-        </article>
+          <div class="hero-visual" data-hero-rotator>
+            ${homeHeroPhotoIds
+              .map((id, index) => {
+                const photo = photoById(id)
 
-        <article class="hero-side-panel">
-          <p class="panel-label">Current focus</p>
-          <h3>Competition + outreach</h3>
-          <p>We build, test, and mentor with student-led subteams across engineering, business, and media.</p>
-        </article>
+                return `
+                  <article class="hero-slide ${index === 0 ? 'active' : ''}" data-slide>
+                    <img src="${photo.src}" alt="${photo.alt}" />
+                  </article>
+                `
+              })
+              .join('')}
 
-        <article class="hero-wide-panel">
-          <p class="panel-label">Important dates</p>
-          <p>Wake County District Events: March 6-8 and March 20-22 at Heritage High School, Wake Forest, NC.</p>
-        </article>
-      </div>
-    </section>
+            <div class="hero-flash-card">
+              <p class="eyebrow">Season Summary</p>
+              <h3>2 Districts + States</h3>
+              <p>Quarterfinalists. Semifinalists. Rising All-Star at the state championship.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Competition Schedule</p>
-        <h2>District Events</h2>
-      </header>
+      <section class="section section-crimson">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Season Highlights</p>
+            <h2 class="section-title">Exact results, front and center.</h2>
+          </div>
+          <p class="section-copy">
+            This season needs to read like a real competitive arc: strong first event, faster second event,
+            then a state-level finish that made the trajectory obvious.
+          </p>
+        </header>
 
-      <div class="event-lattice">
-        <article class="event-card">
-          <p class="event-date">March 6-8</p>
-          <h3>FNC Wake County #1 District Event</h3>
-          <p class="event-location">Heritage High School, Wake Forest, NC</p>
-          <ul class="clean-list">
-            <li>Friday, March 6th: 5pm - 10pm</li>
-            <li>Saturday, March 7th: 8am - 8pm</li>
-            <li>Sunday, March 8th: 8am - 5pm</li>
-          </ul>
-        </article>
+        <div class="results-grid">
+          ${seasonEvents
+            .map((event) => {
+              const photo = photoById(event.photoId)
 
-        <article class="event-card">
-          <p class="event-date">March 20-22</p>
-          <h3>FNC Wake County #2 District Event</h3>
-          <p class="event-location">Heritage High School, Wake Forest, NC</p>
-          <ul class="clean-list">
-            <li>Friday, March 20th: 5pm - 10pm</li>
-            <li>Saturday, March 21th: 8am - 8pm</li>
-            <li>Sunday, March 22th: 8am - 5pm</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+              return `
+                <article class="result-card">
+                  <img class="result-photo" src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+                  <div class="result-body">
+                    <p class="eyebrow">2026 Season Stop</p>
+                    <h3>${event.title}</h3>
+                    <p class="result-line"><span>Awards Won:</span> ${event.award}</p>
+                    ${
+                      event.performance
+                        ? `<p class="result-line"><span>Performance:</span> ${event.performance}</p>`
+                        : ''
+                    }
+                    <p class="result-summary">${event.summary}</p>
+                  </div>
+                </article>
+              `
+            })
+            .join('')}
+        </div>
+      </section>
 
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Gallery</p>
-        <h2>Our Team</h2>
-      </header>
-      <div class="team-photo-card team-photo-card-large">
-        <img class="team-photo team-photo-large" src="assets/team-photo.png" alt="FRC Team 11179 team photo" />
-      </div>
-    </section>
+      <section class="section section-cyan">
+        <div class="story-grid">
+          <article class="story-panel">
+            <p class="eyebrow">Who We Are</p>
+            <h2 class="section-title">Not a generic club site. A team with direction.</h2>
+            <p class="section-copy">
+              The story is simple: 11179 builds with intent, competes hard, and already looks like a program
+              that belongs at serious events. The site should reflect that same standard.
+            </p>
 
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Robot</p>
-        <h2>Robot Spotlight</h2>
-      </header>
-      <figure class="robot-card robot-card-standalone">
-        <img class="robot-photo" src="assets/robots/robot-1.png" alt="FRC robot photo" />
-      </figure>
-    </section>
+            <div class="value-stack">
+              <article class="value-card">
+                <h3>Built to compete</h3>
+                <p>Engineering choices, match prep, and pit presence all need to feel deliberate.</p>
+              </article>
+              <article class="value-card">
+                <h3>Culture with edge</h3>
+                <p>The team personality matters, but it needs to read as confident and credible, not corny.</p>
+              </article>
+              <article class="value-card">
+                <h3>Just getting started</h3>
+                <p>This rookie season was the opening statement, not the ceiling.</p>
+              </article>
+            </div>
+          </article>
 
-    <section class="home-section">
-      <div class="info-layout">
-        <article class="info-card">
-          <p class="panel-label">Support</p>
-          <h2>Special shoutout to our power level sponsor!</h2>
-          <p>Thank you for supporting our team, outreach programs, and student growth this season.</p>
-          <img class="sponsor-logo" src="assets/nasa-logo.png" alt="NASA logo" />
-        </article>
+          <div class="photo-stack">
+            ${teamShowcaseIds.slice(0, 2).map((id) => renderPhotoCard(id)).join('')}
+          </div>
+        </div>
+      </section>
 
-        <article class="info-card">
-          <p class="panel-label">Coach emails</p>
-          <h2>Contact coaches</h2>
-          <p><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a></p>
-          <p><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a></p>
-        </article>
+      <section class="section section-steel">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Robot / Engineering</p>
+            <h2 class="section-title">Show the machine like it earned the spotlight.</h2>
+          </div>
+          <p class="section-copy">
+            The robot gallery should focus on the shots that actually communicate build quality,
+            mechanism intent, and match context.
+          </p>
+        </header>
 
-        <article class="info-card social-card">
-          <h2>Follow the team</h2>
-          <p>Build updates, event highlights, and outreach moments.</p>
-          <a class="cta" href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">Open Instagram</a>
-        </article>
-      </div>
-    </section>
-  `
+        <div class="media-grid media-grid-four">
+          ${robotShowcaseIds.map((id) => renderPhotoCard(id)).join('')}
+        </div>
+      </section>
+
+      <section class="section section-gold">
+        <div class="story-grid reverse">
+          <div class="photo-stack">
+            ${['team-group', 'family-moment'].map((id) => renderPhotoCard(id)).join('')}
+          </div>
+
+          <article class="story-panel">
+            <p class="eyebrow">Team Culture</p>
+            <h2 class="section-title">The energy is part of the brand.</h2>
+            <p class="section-copy">
+              The strongest team photos do more than prove members were in the room. They show chemistry,
+              confidence, and the kind of buy-in that makes a rookie team dangerous fast.
+            </p>
+            <ul class="clean-list">
+              <li>Use celebration and driver-station moments to show competitiveness.</li>
+              <li>Use sharp group shots to establish credibility and identity.</li>
+              <li>Keep novelty photos off the public-facing gallery unless they add real character.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery-shell section-spectrum" data-gallery>
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Photo Gallery</p>
+            <h2 class="section-title">Curated, not crowded.</h2>
+          </div>
+          <p class="section-copy">
+            The public gallery should only carry photos that strengthen the team’s image. Robot, Team, and Flicks
+            are filterable below. Unusable shots stay out of the site.
+          </p>
+        </header>
+
+        <div class="filter-row">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="robot" aria-pressed="false">Robot</button>
+          <button class="filter-btn" data-filter="team" aria-pressed="false">Team</button>
+          <button class="filter-btn" data-filter="flicks" aria-pressed="false">Flicks</button>
+        </div>
+
+        <div class="gallery-grid">
+          ${galleryFilterIds
+            .map((id) => {
+              const photo = photoById(id)
+
+              return `
+                <figure class="gallery-card" data-category="${photo.category}">
+                  <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+                  <figcaption>
+                    <strong>${photo.title}</strong>
+                  </figcaption>
+                </figure>
+              `
+            })
+            .join('')}
+        </div>
+      </section>
+
+      <section class="section cta-band section-crimson">
+        <div>
+          <p class="eyebrow">Next Move</p>
+          <h2 class="section-title">Join the build or help power the next season.</h2>
+          <p class="section-copy">
+            The site should close with action: new members, sponsors, and supporters should know exactly where to go next.
+          </p>
+        </div>
+
+        <div class="cta-panel">
+          <a class="button button-primary" href="join.html">Start Here</a>
+          <a class="button button-secondary" href="sponsors.html">Sponsor 11179</a>
+          ${renderPhotoCard('team-hype', 'compact')}
+        </div>
+      </section>
+    `
   )
 )

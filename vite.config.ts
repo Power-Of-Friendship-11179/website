@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: 'index.html',
+        about: 'about.html',
         team: 'team.html',
         outreach: 'outreach.html',
         sponsors: 'sponsors.html',

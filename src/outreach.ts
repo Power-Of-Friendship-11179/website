@@ -1,98 +1,103 @@
 import './style.css'
+import { photoById } from './season'
 import { mount, renderPage } from './site'
 
+function renderPhotoCard(id: string): string {
+  const photo = photoById(id)
+
+  return `
+    <figure class="photo-card">
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <figcaption>
+        <strong>${photo.title}</strong>
+        <span>${photo.caption}</span>
+      </figcaption>
+    </figure>
+  `
+}
+
 mount(
+  'outreach',
   renderPage(
     'outreach',
-    'Outreach',
-    'This page highlights the outreach events our team has led to share STEM and robotics with our community. Part of our mission statement is to provide STEM opportunities to the youth in our community, and thus, we conduct several outreach events to fulfill our mission.',
     `
-    <section class="home-section">
-      <div class="outreach-hero-layout">
-        <article class="outreach-hero-card">
-          <p class="panel-label">Community mission</p>
-          <h2>Sharing robotics and STEM with younger students.</h2>
-          <p>
-            Part of our mission is to provide STEM opportunities to youth in our
-            community through hands-on outreach events.
-          </p>
-          <p>
-            We run demos, explain engineering concepts, and invite students to
-            interact with our robot and team members.
-          </p>
-        </article>
+      <section class="section section-gold">
+        <div class="story-grid">
+          <article class="story-panel">
+            <p class="eyebrow">Outreach</p>
+            <h1 class="section-title">Competition credibility should feed community impact.</h1>
+            <p class="section-copy">
+              Part of the team mission is opening the door to STEM for younger students and families.
+              Outreach matters more when the team looks credible doing it, so this page keeps the same polished
+              visual standard as the rest of the site.
+            </p>
+            <div class="value-stack">
+              <article class="value-card">
+                <h3>Robot demos</h3>
+                <p>Use the robot as a conversation starter for design, programming, and engineering.</p>
+              </article>
+              <article class="value-card">
+                <h3>Student leadership</h3>
+                <p>Members explain the build process, share their experience, and make STEM feel reachable.</p>
+              </article>
+              <article class="value-card">
+                <h3>Campus and community</h3>
+                <p>Every event should reinforce that the team belongs in the school and the larger local robotics scene.</p>
+              </article>
+            </div>
+          </article>
 
-        <aside class="outreach-photo-stack">
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
+          <div class="photo-stack">
+            ${['family-moment', 'team-group'].map((id) => renderPhotoCard(id)).join('')}
           </div>
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
-          </div>
-        </aside>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Events</p>
-        <h2>Outreach timeline</h2>
-      </header>
-      <div class="outreach-event-grid">
-        <article class="outreach-event-card">
-          <p class="event-badge">January 15, 2026</p>
-          <h3>Lacy Elementary School STEM Night</h3>
-          <p>Robot demos and STEM station engagement with elementary students.</p>
-        </article>
-
-        <article class="outreach-event-card">
-          <p class="event-badge">February 25, 2026</p>
-          <h3>Academy of Engineering Expo</h3>
-          <p>Presented FRC engineering workflow to prospective students and families.</p>
-        </article>
-
-        <article class="outreach-event-card">
-          <p class="event-badge">February 25, 2026</p>
-          <h3>Woods Creek Elementary STEAM Night</h3>
-          <p>Interactive demonstrations and Q&A about robotics and teamwork.</p>
-        </article>
-
-        <article class="outreach-event-card">
-          <p class="event-badge">Coming Soon</p>
-          <h3>More outreach events</h3>
-          <p>Additional events and recap photos will be added throughout the season.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Gallery</p>
-        <h2>Event photo wall</h2>
-      </header>
-      <div class="outreach-gallery-grid">
-        <figure class="outreach-gallery-item wide">
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
+      <section class="section section-cyan">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">How We Show Up</p>
+            <h2 class="section-title">Outreach should feel inviting and legit at the same time.</h2>
           </div>
-        </figure>
-        <figure class="outreach-gallery-item">
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
+        </header>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Interactive demos</h3>
+            <p>Let younger students see the robot close-up, ask questions, and connect real engineering to something memorable.</p>
+          </article>
+          <article class="info-card">
+            <h3>STEM storytelling</h3>
+            <p>Explain how strategy, fabrication, code, and teamwork all connect inside one competition season.</p>
+          </article>
+          <article class="info-card">
+            <h3>Recruitment pipeline</h3>
+            <p>Outreach is also how the team builds future interest, future members, and future confidence in STEM.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-spectrum">
+        <div class="story-grid reverse">
+          <div class="photo-stack">
+            ${['pit-handshake', 'team-heart'].map((id) => renderPhotoCard(id)).join('')}
           </div>
-        </figure>
-        <figure class="outreach-gallery-item">
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
-          </div>
-        </figure>
-        <figure class="outreach-gallery-item">
-          <div class="outreach-photo-slot">
-            <p class="slot-title">Photo</p>
-          </div>
-        </figure>
-      </div>
-    </section>
-  `
+
+          <article class="story-panel">
+            <p class="eyebrow">Why It Matters</p>
+            <h2 class="section-title">The team brand should travel beyond the field.</h2>
+            <p class="section-copy">
+              A strong outreach page is not filler. It shows that 11179 is building something durable:
+              a team that competes hard, represents itself well, and brings other people into the process.
+            </p>
+            <ul class="clean-list">
+              <li>Students act as mentors and translators for STEM concepts.</li>
+              <li>Families and younger students get a direct look at what the team is building.</li>
+              <li>Every outreach moment reinforces the long-term identity of the program.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    `
   )
 )

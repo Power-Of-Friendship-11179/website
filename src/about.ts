@@ -1,116 +1,131 @@
 import './style.css'
+import { photoById, seasonEvents, seasonStats } from './season'
 import { mount, renderPage } from './site'
 
+function renderPhotoCard(id: string): string {
+  const photo = photoById(id)
+
+  return `
+    <figure class="photo-card">
+      <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+      <figcaption>
+        <strong>${photo.title}</strong>
+        <span>${photo.caption}</span>
+      </figcaption>
+    </figure>
+  `
+}
+
 mount(
+  'about',
   renderPage(
     'about',
-    'About Team 11179',
-    'Student-led robotics focused on engineering, leadership, and community impact.',
     `
-    <section class="home-section">
-      <div class="about-mosaic">
-        <article class="about-hero-card">
-          <p class="panel-label">Who we are</p>
-          <h2>We build robots and leaders at the same time.</h2>
-          <p>
-            Team 11179 is a FIRST Robotics Competition team at Apex Friendship High School.
-            Students run real projects across mechanical, electrical, programming, design,
-            business, and media.
-          </p>
-          <div class="sponsor-actions">
-            <a class="cta" href="team.html">Meet the team</a>
-            <a class="cta red-btn" href="join.html">Join us</a>
+      <section class="section section-cyan">
+        <div class="story-grid">
+          <article class="story-panel">
+            <p class="eyebrow">About 11179</p>
+            <h1 class="section-title">A rookie program that already looks established.</h1>
+            <p class="section-copy">
+              Team 11179 is a student-led FIRST Robotics Competition team at Apex Friendship High School.
+              The mission is bigger than building one robot: create a program where engineering, leadership,
+              strategy, media, and outreach all move with the same standard.
+            </p>
+            <p class="section-copy">
+              The first season proved the formula works. The team showed up with award-winning culture,
+              competitive progress from event to event, and a statewide ranking that made the trajectory obvious.
+            </p>
+          </article>
+
+          <div class="photo-stack">
+            ${['team-group', 'robot-front'].map((id) => renderPhotoCard(id)).join('')}
           </div>
-        </article>
+        </div>
+      </section>
 
-        <aside class="about-kpi-rail">
-          <article class="about-kpi-card">
-            <p class="kpi-label">Focus</p>
-            <h3>Build + Compete</h3>
-            <p>Student-led robot design from kickoff to district events.</p>
-          </article>
-          <article class="about-kpi-card">
-            <p class="kpi-label">Impact</p>
-            <h3>STEM Outreach</h3>
-            <p>We run demos and events to inspire younger students.</p>
-          </article>
-          <article class="about-kpi-card">
-            <p class="kpi-label">Culture</p>
-            <h3>Mentor Driven</h3>
-            <p>Experienced mentors and student leaders guide every subteam.</p>
-          </article>
-        </aside>
-      </div>
-    </section>
+      <section class="section section-crimson">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Rookie Season Signal</p>
+            <h2 class="section-title">What the first year actually established.</h2>
+          </div>
+        </header>
 
-    <section class="home-section">
-      <div class="about-split-grid">
-        <article class="about-story-card">
-          <p class="panel-label">Our mission</p>
-          <h2>Open doors to STEM for every student.</h2>
-          <p>
-            We aim to inspire students of all backgrounds to explore STEM and make a positive
-            impact on our school and community through hands-on robotics.
+        <div class="info-grid">
+          ${seasonStats
+            .map(
+              (stat) => `
+                <article class="info-card">
+                  <p class="metric-value">${stat.value}</p>
+                  <h3>${stat.label}</h3>
+                  <p>${stat.note}</p>
+                </article>
+              `
+            )
+            .join('')}
+        </div>
+      </section>
+
+      <section class="section section-spectrum">
+        <header class="section-header">
+          <div>
+            <p class="eyebrow">Season Arc</p>
+            <h2 class="section-title">From rookie entry to state-level credibility.</h2>
+          </div>
+          <p class="section-copy">
+            The site should tell a competitive story, not just list dates. Each event mattered because it pushed the
+            team’s standard higher.
           </p>
-          <p>
-            Members graduate with practical engineering experience, communication skills,
-            and confidence built under real deadlines.
-          </p>
-        </article>
+        </header>
 
-        <div class="about-values-stack">
-          <article class="about-value">
-            <h3>Design with purpose</h3>
-            <p>Every subsystem is built around reliability, iteration, and strategy.</p>
-          </article>
-          <article class="about-value">
-            <h3>Lead through service</h3>
-            <p>Older members mentor new students and pass down technical knowledge.</p>
-          </article>
-          <article class="about-value">
-            <h3>Compete with grit</h3>
-            <p>We test, learn from data, and improve fast through each event.</p>
+        <div class="timeline-grid">
+          ${seasonEvents
+            .map((event) => {
+              const photo = photoById(event.photoId)
+
+              return `
+                <article class="timeline-card">
+                  <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+                  <div>
+                    <p class="eyebrow">Competition Stop</p>
+                    <h3>${event.title}</h3>
+                    <p><strong>Awards Won:</strong> ${event.award}</p>
+                    ${event.performance ? `<p><strong>Performance:</strong> ${event.performance}</p>` : ''}
+                    <p>${event.summary}</p>
+                  </div>
+                </article>
+              `
+            })
+            .join('')}
+        </div>
+      </section>
+
+      <section class="section section-gold">
+        <div class="story-grid reverse">
+          <div class="photo-stack">
+            ${['hero-robot', 'robot-matchup'].map((id) => renderPhotoCard(id)).join('')}
+          </div>
+
+          <article class="story-panel">
+            <p class="eyebrow">Identity</p>
+            <h2 class="section-title">Engineering, culture, and momentum in the same frame.</h2>
+            <div class="value-stack">
+              <article class="value-card">
+                <h3>Student-led execution</h3>
+                <p>Members own real decisions across mechanical, programming, media, business, and strategy.</p>
+              </article>
+              <article class="value-card">
+                <h3>Competition maturity</h3>
+                <p>The rookie season mattered because the team looked more composed every time it hit the field.</p>
+              </article>
+              <article class="value-card">
+                <h3>Momentum worth investing in</h3>
+                <p>The ranking, awards, and state-championship appearance all point to a program still accelerating.</p>
+              </article>
+            </div>
           </article>
         </div>
-      </div>
-      <div class="featured-photo-layout">
-        <div class="team-photo-card team-photo-card-large">
-          <img class="team-photo team-photo-large" src="assets/team-photo.png" alt="FRC Team 11179 team photo" />
-        </div>
-        <figure class="robot-card">
-          <img class="robot-photo" src="assets/robots/robot-1.png" alt="FRC robot photo" />
-        </figure>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <header class="home-section-head">
-        <p class="panel-label">Team journey</p>
-        <h2>How we run the season</h2>
-      </header>
-      <div class="about-timeline">
-        <article class="timeline-item">
-          <p class="timeline-step">01</p>
-          <h3>Kickoff + Strategy</h3>
-          <p>Analyze game rules, define priorities, and map our robot architecture.</p>
-        </article>
-        <article class="timeline-item">
-          <p class="timeline-step">02</p>
-          <h3>Design + Prototype</h3>
-          <p>Create CAD, build prototypes, and validate mechanisms early.</p>
-        </article>
-        <article class="timeline-item">
-          <p class="timeline-step">03</p>
-          <h3>Integrate + Test</h3>
-          <p>Combine hardware/software, tune autos, and harden for reliability.</p>
-        </article>
-        <article class="timeline-item">
-          <p class="timeline-step">04</p>
-          <h3>Compete + Outreach</h3>
-          <p>Compete at district events and share STEM through local programs.</p>
-        </article>
-      </div>
-    </section>
-  `
+      </section>
+    `
   )
 )
