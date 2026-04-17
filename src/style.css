@@ -983,37 +983,46 @@ a {
 
 .sponsor-logo-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .sponsor-logo-grid-single {
   grid-template-columns: minmax(0, 1fr);
 }
 
+.sponsor-logo-grid-single .logo-panel {
+  width: min(100%, 720px);
+  margin: 0 auto;
+}
+
 .logo-panel {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   justify-items: center;
-  min-height: 260px;
-  padding: 24px;
+  min-height: 0;
+  padding: 20px 22px;
   text-align: center;
+  align-content: center;
 }
 
 .logo-panel h3 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .tier-logo {
-  max-width: min(100%, 260px);
-  max-height: 96px;
-  padding: 14px;
+  width: auto;
+  max-width: min(100%, 420px);
+  max-height: 150px;
+  padding: 10px 14px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.97);
+  object-fit: contain;
 }
 
 .big-logo {
-  max-height: 110px;
+  max-height: 180px;
 }
 
 .perk-grid {
