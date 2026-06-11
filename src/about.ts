@@ -21,7 +21,7 @@ mount(
   renderPage(
     'about',
     `
-      <section class="section section-cyan">
+      <section class="section section-cyan will-reveal">
         <div class="story-grid">
           <article class="story-panel">
             <p class="eyebrow">About 11179</p>
@@ -31,6 +31,11 @@ mount(
               inspire students of all backgrounds to explore STEM and make a positive impact on our K-12
               campus and community.
             </p>
+            <p class="section-copy">
+              We're a first-year team based at Apex Friendship High School, competing in the FIRST Robotics
+              Competition — a program that challenges students to design, build, and program a robot in six
+              weeks and compete against teams from across the region.
+            </p>
           </article>
 
           <div class="photo-stack">
@@ -39,47 +44,48 @@ mount(
         </div>
       </section>
 
-      <section class="section section-crimson">
+      <section class="section section-crimson will-reveal">
         <header class="section-header">
           <div>
             <p class="eyebrow">Quick Facts</p>
-            <h2 class="section-title">Add section title for quick team facts.</h2>
+            <h2 class="section-title">Who we are — by the numbers.</h2>
           </div>
         </header>
 
-        <div class="info-grid">
+        <div class="info-grid stagger-reveal">
           <article class="info-card">
             <h3>Location</h3>
-            <p>Add the team's city and state.</p>
-          </article>
-          <article class="info-card">
-            <h3>School</h3>
-            <p>Add the full school name.</p>
+            <p>Apex, NC — Apex Friendship High School (AFHS). A 9–12 campus in the heart of the Research Triangle area.</p>
           </article>
           <article class="info-card">
             <h3>Mission</h3>
-            <p>Add the mission statement in one sentence.</p>
+            <p>To inspire students of all backgrounds to explore STEM and make a positive impact on our K-12 campus and community.</p>
+          </article>
+          <article class="info-card">
+            <h3>Team Number</h3>
+            <p>FRC Team 11179 — competing in the FIRST Robotics Competition under the FIRST North Carolina district.</p>
           </article>
         </div>
       </section>
 
-      <section class="section section-spectrum">
+      <section class="section section-spectrum will-reveal">
         <div class="story-grid reverse">
           <div class="photo-stack">
             ${['hero-robot', 'family-moment'].map((id) => renderPhotoCard(id)).join('')}
           </div>
 
           <article class="story-panel">
-            <p class="eyebrow">Community</p>
-            <h2 class="section-title">Add section title about outreach or community impact.</h2>
+            <p class="eyebrow">Open Doors</p>
+            <h2 class="section-title">Built for everyone. Open to all.</h2>
             <p class="section-copy">
-              Add one or two sentences about the team's impact on students, the school, or the community.
+              You don't need robotics experience to join Team 11179. We're built on the idea that every
+              student has something to contribute — whether you code, build, design, or just show up ready to learn.
             </p>
             <ul class="clean-list">
-              <li>Add one fact about who can join the team.</li>
-              <li>Add one fact about outreach, mentoring, or STEM access.</li>
-              <li>Add one contact detail you want visitors to notice.</li>
-              <li>Add one link or action visitors should take next.</li>
+              <li>Any student at Apex Friendship High School can join — no prior experience needed.</li>
+              <li>Our eight subteams cover technical and non-technical roles for every kind of student.</li>
+              <li>We run outreach events at local K-12 schools to spread STEM access across Apex.</li>
+              <li>Email <a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a> or follow <a href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">@afhs_frc11179</a> to get started.</li>
             </ul>
           </article>
         </div>

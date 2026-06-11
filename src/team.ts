@@ -21,36 +21,36 @@ const captains: Member[] = [
 
 const subteams: Subteam[] = [
   {
-    name: 'Mechanical Subteam',
-    description: 'Add one or two sentences about what the mechanical subteam does.'
+    name: 'Mechanical',
+    description: 'Designs and builds the physical robot — from the chassis and drivetrain to every custom mechanism that scores game pieces and moves on the field.'
   },
   {
-    name: 'Programming Subteam',
-    description: 'Add one or two sentences about what the programming subteam does.'
+    name: 'Programming',
+    description: 'Writes the code behind everything the robot does — autonomous routines, driver controls, sensor feedback, and the systems that make split-second decisions during a match.'
   },
   {
-    name: 'Business Subteam',
-    description: 'Add one or two sentences about what the business subteam does.'
+    name: 'Business',
+    description: 'Handles the business side: fundraising, grant applications, sponsor relationships, and the financial planning that keeps the team going season after season.'
   },
   {
-    name: 'Electrical Subteam',
-    description: 'Add one or two sentences about what the electrical subteam does.'
+    name: 'Electrical',
+    description: 'Wires the entire robot from scratch — motors, sensors, control hardware, and power distribution. When things go wrong at competition, this team fixes it.'
   },
   {
-    name: 'Outreach Subteam',
-    description: 'Add one or two sentences about what the outreach subteam does.'
+    name: 'Outreach',
+    description: 'Plans and runs STEM events at local schools, brings the robot to the community, and builds the relationships that make our mission more than just a slogan.'
   },
   {
-    name: 'Design Subteam',
-    description: 'Add one or two sentences about what the design subteam does.'
+    name: 'Design',
+    description: 'Creates CAD models, technical drawings, and visual assets the team relies on — from part designs for manufacturing to graphics for shirts, the website, and the competition pit.'
   },
   {
-    name: 'Media Subteam',
-    description: 'Add one or two sentences about what the media subteam does.'
+    name: 'Media',
+    description: "Documents the team's season through photos, video, and social media — making sure our community knows what we're building, how we compete, and why it matters."
   },
   {
-    name: 'Safety Subteam',
-    description: 'Add one or two sentences about what the safety subteam does.'
+    name: 'Safety',
+    description: 'Keeps every build session, meeting, and competition day running safely — enforcing protocols, conducting checks, and making sure everyone knows and follows the rules.'
   }
 ]
 
@@ -110,15 +110,20 @@ mount(
   renderPage(
     'team',
     `
-      <section class="section section-crimson">
+      <section class="section section-crimson will-reveal">
         <div class="story-grid">
           <article class="story-panel">
-            <p class="eyebrow">Subteams</p>
-            <h1 class="section-title">Add team page intro title.</h1>
+            <p class="eyebrow">The Team</p>
+            <h1 class="section-title">Different skills. One team.</h1>
             <p class="section-copy">
-              Add one or two sentences explaining that students can contribute in technical and non-technical roles.
+              You don't need to be a programmer or an engineer to be part of Team 11179. Our eight subteams
+              cover everything from building the robot to running social media — there's a role for every
+              kind of student.
             </p>
-            <p class="section-copy">Add one sentence introducing the subteams below.</p>
+            <p class="section-copy">
+              Below is how the team is organized — the subteams that make the season work, the captains who
+              lead them, and the leads who run each area day to day.
+            </p>
           </article>
 
           <div class="photo-stack">
@@ -127,15 +132,19 @@ mount(
         </div>
       </section>
 
-      <section class="section section-cyan">
+      <section class="section section-cyan will-reveal">
         <header class="section-header">
           <div>
             <p class="eyebrow">Subteams</p>
-            <h2 class="section-title">Add section title for how the team is organized.</h2>
+            <h2 class="section-title">Eight subteams. Every role matters.</h2>
           </div>
+          <p class="section-copy">
+            Each subteam handles a distinct part of what it takes to run a competitive FRC program — from
+            the robot itself to the community work that defines our mission.
+          </p>
         </header>
 
-        <div class="perk-grid">
+        <div class="perk-grid stagger-reveal">
           ${subteams
             .map(
               (subteam) => `
@@ -149,28 +158,36 @@ mount(
         </div>
       </section>
 
-      <section class="section section-spectrum">
+      <section class="section section-spectrum will-reveal">
         <header class="section-header">
           <div>
             <p class="eyebrow">Captains</p>
-            <h2 class="section-title">Add section title for captains.</h2>
+            <h2 class="section-title">Leading the charge.</h2>
           </div>
+          <p class="section-copy">
+            Our co-captains are responsible for the team's overall direction — keeping everyone aligned
+            through build season, competition weekends, and everything in between.
+          </p>
         </header>
 
-        <div class="member-grid member-grid-two">
+        <div class="member-grid member-grid-two stagger-reveal">
           ${captains.map((member) => renderMemberCard(member)).join('')}
         </div>
       </section>
 
-      <section class="section section-gold">
+      <section class="section section-gold will-reveal">
         <header class="section-header">
           <div>
             <p class="eyebrow">Subteam Leads</p>
-            <h2 class="section-title">Add section title for subteam leads.</h2>
+            <h2 class="section-title">The people running each area.</h2>
           </div>
+          <p class="section-copy">
+            Each subteam has a dedicated lead responsible for organizing their area, managing members, and
+            keeping their work on track through the season.
+          </p>
         </header>
 
-        <div class="member-grid member-grid-three">
+        <div class="member-grid member-grid-three stagger-reveal">
           ${subteamLeads.map((member) => renderMemberCard(member)).join('')}
         </div>
       </section>

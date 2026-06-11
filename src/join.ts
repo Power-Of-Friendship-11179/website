@@ -21,13 +21,14 @@ mount(
   renderPage(
     'join',
     `
-    <section class="section section-crimson">
+    <section class="section section-crimson will-reveal">
       <div class="story-grid">
         <article class="story-panel">
           <p class="eyebrow">Joining The Team</p>
-          <h1 class="section-title">Joining the team</h1>
+          <h1 class="section-title">Join Team 11179.</h1>
           <p class="section-copy">
-            Steps to join the team:
+            Team 11179 is open to any student at Apex Friendship High School. No experience required —
+            just show up ready to work and learn. Here's how to get started.
           </p>
           <div class="button-row">
             <a class="button button-primary" href="mailto:rsettle@wcpss.net?subject=Interested%20in%20Joining%20FRC%2011179">Email Ms. Settle</a>
@@ -41,72 +42,81 @@ mount(
       </div>
     </section>
 
-    <section class="section section-cyan">
+    <section class="section section-cyan will-reveal">
       <header class="section-header">
         <div>
           <p class="eyebrow">Steps To Join</p>
-          <h2 class="section-title">Add section title for how students join.</h2>
+          <h2 class="section-title">How to get on the team.</h2>
         </div>
+        <p class="section-copy">
+          Four steps is all it takes. We'll walk you through it — and once you're in, you'll find your
+          place across one of our eight subteams.
+        </p>
       </header>
 
-      <div class="join-steps">
+      <div class="join-steps stagger-reveal">
         <article class="join-step">
           <p class="step-num">01</p>
           <h3>Eligibility</h3>
-          <p>Add one sentence explaining who can join the team.</p>
+          <p>Any student at Apex Friendship High School can join. All grade levels and skill levels are welcome — we have technical and non-technical roles for every kind of student.</p>
         </article>
         <article class="join-step">
           <p class="step-num">02</p>
-          <h3>Contact Coaches</h3>
-          <p>Add one sentence telling students to email the coaches.</p>
+          <h3>Contact the Coaches</h3>
+          <p>Email Ms. Settle at <a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a> or Ms. Sousa at <a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a> to express your interest. Put "FRC 11179" in the subject line.</p>
         </article>
         <article class="join-step">
           <p class="step-num">03</p>
-          <h3>Registration Steps</h3>
-          <p>Add one sentence about FIRST registration, Remind, and any setup steps.</p>
+          <h3>Complete Registration</h3>
+          <p>Once you're in contact with the coaches, you'll complete registration through FIRST, sign up on Remind for team updates, and take care of any required onboarding steps.</p>
         </article>
         <article class="join-step">
           <p class="step-num">04</p>
           <h3>Attend Meetings</h3>
-          <p>Add one sentence about showing up, meeting subteams, and getting involved.</p>
+          <p>Come to a meeting, meet the subteams, and find where you fit. We'll get you oriented — then you're part of the team.</p>
         </article>
       </div>
     </section>
 
-    <section class="section section-gold">
-      <div class="schedule-grid">
+    <section class="section section-gold will-reveal">
+      <div class="schedule-grid stagger-reveal">
         <article class="schedule-card">
-          <p class="eyebrow">Meeting Times</p>
+          <p class="eyebrow">When We Meet</p>
           <h2 class="section-title">Meeting times</h2>
           <ul class="clean-list">
-            <li>Tuesdays, Wednesdays, Thursdays: 2:30 PM - 5:00 PM</li>
-            <li>Saturdays: 9:00 AM - 4:00 PM</li>
+            <li><strong>Tuesday, Wednesday, Thursday:</strong> 2:30 PM – 5:00 PM</li>
+            <li><strong>Saturday:</strong> 9:00 AM – 4:00 PM</li>
           </ul>
+          <p style="margin-top: 14px; color: var(--muted); font-size: 0.94rem; line-height: 1.65;">
+            Meeting schedules may shift during build season and around competitions. Check Remind or
+            Instagram for the latest updates.
+          </p>
         </article>
 
         <article class="schedule-card">
-          <p class="eyebrow">Coach Emails</p>
+          <p class="eyebrow">How To Reach Us</p>
           <h2 class="section-title">Contact</h2>
           <ul class="clean-list">
-            <li><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a></li>
-            <li><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a></li>
-            <li><a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a></li>
+            <li><a href="mailto:rsettle@wcpss.net">rsettle@wcpss.net</a> — Ms. Settle</li>
+            <li><a href="mailto:asousa@wcpss.net">asousa@wcpss.net</a> — Ms. Sousa</li>
+            <li><a href="mailto:frcteam11179@gmail.com">frcteam11179@gmail.com</a> — Team email</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="section cta-band section-crimson">
+    <section class="section cta-band section-crimson will-reveal">
       <div>
-        <p class="eyebrow">Instagram</p>
-        <h2 class="section-title">Check out our Instagram.</h2>
+        <p class="eyebrow">Follow Along</p>
+        <h2 class="section-title">Find us on Instagram.</h2>
         <p class="section-copy">
-          Add one short sentence inviting students to follow Instagram or email questions.
+          We post competition updates, build season highlights, and outreach events. Follow
+          <a href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">@afhs_frc11179</a> to stay in the loop.
         </p>
       </div>
 
       <div class="cta-panel">
-        <a class="button button-primary" href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="button button-primary" href="https://www.instagram.com/afhs_frc11179/" target="_blank" rel="noreferrer">@afhs_frc11179</a>
         <a class="button button-secondary" href="team.html">Meet The Team</a>
         ${renderPhotoCard('team-heart', 'compact')}
       </div>

@@ -21,15 +21,19 @@ mount(
   renderPage(
     'outreach',
     `
-      <section class="section section-gold">
+      <section class="section section-gold will-reveal">
         <div class="story-grid">
           <article class="story-panel">
             <p class="eyebrow">Events</p>
             <h1 class="section-title">Outreach</h1>
             <p class="section-copy">
-              This page highlights the outreach events our team has led to share STEM and robotics with our
-              community. Part of our mission statement is to provide STEM opportunities to the youth in our
-              community, and we conduct several outreach events to fulfill that mission.
+              Part of our mission is providing STEM opportunities to the youth in our community. This page
+              highlights the outreach events our team has led — and the upcoming ones we're preparing for —
+              to share robotics with students across Apex.
+            </p>
+            <p class="section-copy">
+              We've run demos at local elementary schools, participated in engineering expos right on our own
+              campus, and we're just getting started.
             </p>
           </article>
 
@@ -39,51 +43,55 @@ mount(
         </div>
       </section>
 
-      <section class="section section-cyan">
+      <section class="section section-cyan will-reveal">
         <header class="section-header">
           <div>
-            <p class="eyebrow">Upcoming Events</p>
-            <h2 class="section-title">Add section title for outreach events.</h2>
+            <p class="eyebrow">On The Calendar</p>
+            <h2 class="section-title">Upcoming outreach events.</h2>
           </div>
+          <p class="section-copy">
+            These events are where our mission gets real — hands-on STEM for students who haven't seen
+            robotics up close. Come find us.
+          </p>
         </header>
 
-        <div class="info-grid">
+        <div class="info-grid stagger-reveal">
           <article class="info-card">
-            <h3>Lacy Elementary School STEM Night</h3>
-            <p>1/15/26</p>
-            <p>Coming soon!</p>
+            <h3>Lacy Elementary STEM Night</h3>
+            <p><strong>January 15, 2026</strong></p>
+            <p>An evening of hands-on robotics for K-5 students at Lacy Elementary. We bring the robot, the demos, and the energy — students get to see what STEM looks like in action.</p>
           </article>
           <article class="info-card">
             <h3>Academy of Engineering Expo</h3>
-            <p>2/25/26</p>
-            <p>Coming soon!</p>
+            <p><strong>February 25, 2026</strong></p>
+            <p>Showcasing Team 11179 and our robot to students, teachers, and visitors at Apex Friendship's own Academy of Engineering — right where we practice.</p>
           </article>
           <article class="info-card">
             <h3>Woods Creek Elementary STEAM Night</h3>
-            <p>3/26/26</p>
-            <p>Coming soon!</p>
+            <p><strong>March 26, 2026</strong></p>
+            <p>Robotics demos and STEM activities for K-5 students at Woods Creek Elementary. Another school, more students, the same mission.</p>
           </article>
         </div>
       </section>
 
-      <section class="section section-spectrum">
+      <section class="section section-spectrum will-reveal">
         <div class="story-grid reverse">
           <div class="photo-stack">
             ${['pit-handshake', 'team-heart'].map((id) => renderPhotoCard(id)).join('')}
           </div>
 
           <article class="story-panel">
-            <p class="eyebrow">Competitions</p>
+            <p class="eyebrow">This Season</p>
             <h2 class="section-title">Competitions</h2>
             <p class="section-copy">
-              We have had two competitions so far. These competitions were a great place to learn, have fun,
-              and get inspired by the many wonderful teams we were competing with. These events had the kind
-              of atmosphere that showed the coopertition and gracious professionalism that are central to FIRST.
+              We've competed in two regional competitions this season. Both were more than just matches —
+              they showed us what coopertition and gracious professionalism actually look like on a competition
+              floor, and left us better than we arrived.
             </p>
             <ul class="clean-list">
-              <li><strong>03/06-03/08 Competition:</strong> Our first competition was a great first look into what it means to be on an FRC team. By the end of qualification rounds, we created our own alliance and finished fourth in the competition.</li>
-              <li><strong>03/20-03/22 Competition:</strong> Our second competition was more stressful. The robot kept disconnecting during matches and we had to replace most of the electrical system, but the team still earned a third place finish.</li>
-              <li><strong>First North Carolina State Championship:</strong> Coming soon!</li>
+              <li><strong>03/06–03/08 Regional:</strong> Our first competition. By the end of qualifications, we created our own alliance and finished fourth overall. A strong first look at what FRC is.</li>
+              <li><strong>03/20–03/22 Regional:</strong> The robot kept disconnecting during matches. We replaced most of the electrical system on site and still earned a third place finish.</li>
+              <li><strong>FIRST NC State Championship:</strong> Coming soon — the team is preparing.</li>
             </ul>
           </article>
         </div>
