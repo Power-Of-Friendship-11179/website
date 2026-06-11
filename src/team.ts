@@ -61,7 +61,7 @@ const subteamLeads: Member[] = [
   { role: 'Programming Lead', name: 'Senuk W.' },
   { role: 'Scouting Lead', name: 'Yahavi A.', photo: 'assets/yahavi.jpg' },
   { role: 'Outreach Lead', name: 'Joanna W.', photo: 'assets/joanna.png' },
-  { role: 'Design Lead', name: 'Akshay S.', photo: 'assets/akshay.jpeg', photoClass: 'photo-akshay' },
+  { role: 'Design Lead', name: 'Akshay S.', photo: 'assets/akshay.png', photoClass: 'photo-akshay' },
   { role: 'Media Lead', name: 'Karma M.', photo: 'assets/karma.png' },
   { role: 'Electrical Lead', name: 'Matthew T.', photo: 'assets/matthew.png' },
   { role: 'Safety Lead', name: 'Chelsea B.' }
@@ -97,10 +97,6 @@ function renderPhotoCard(id: string): string {
   return `
     <figure class="photo-card">
       <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
-      <figcaption>
-        <strong>${photo.title}</strong>
-        <span>${photo.caption}</span>
-      </figcaption>
     </figure>
   `
 }
@@ -170,7 +166,7 @@ mount(
           </p>
         </header>
 
-        <div class="member-grid member-grid-two stagger-reveal">
+        <div class="member-grid member-grid-two stagger-reveal" style="margin-left:auto; margin-right:auto;">
           ${captains.map((member) => renderMemberCard(member)).join('')}
         </div>
       </section>
@@ -187,7 +183,7 @@ mount(
           </p>
         </header>
 
-        <div class="member-grid member-grid-three stagger-reveal">
+        <div class="member-grid member-grid-five stagger-reveal">
           ${subteamLeads.map((member) => renderMemberCard(member)).join('')}
         </div>
       </section>

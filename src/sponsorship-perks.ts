@@ -8,10 +8,6 @@ function renderPhotoCard(id: string, className = ''): string {
   return `
     <figure class="photo-card ${className}">
       <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
-      <figcaption>
-        <strong>${photo.title}</strong>
-        <span>${photo.caption}</span>
-      </figcaption>
     </figure>
   `
 }

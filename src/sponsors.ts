@@ -8,10 +8,6 @@ function renderPhotoCard(id: string): string {
   return `
     <figure class="photo-card">
       <img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" />
-      <figcaption>
-        <strong>${photo.title}</strong>
-        <span>${photo.caption}</span>
-      </figcaption>
     </figure>
   `
 }
@@ -74,7 +70,6 @@ mount(
         <div class="sponsor-logo-grid sponsor-logo-grid-single will-reveal">
           <article class="logo-panel">
             <p class="eyebrow">Power Level Sponsor</p>
-            <h3>NASA</h3>
             <img class="tier-logo big-logo" src="assets/nasa-logo.png" alt="NASA sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>
@@ -82,7 +77,6 @@ mount(
         <div class="sponsor-logo-grid sponsor-logo-grid-single will-reveal" style="margin-top: 16px;">
           <article class="logo-panel">
             <p class="eyebrow">Alliance Level Sponsor</p>
-            <h3>Argosy Foundation</h3>
             <img class="tier-logo big-logo" src="assets/argosy-foundation.png" alt="Argosy Foundation sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>
@@ -90,12 +84,10 @@ mount(
         <div class="sponsor-logo-grid will-reveal" style="margin-top: 16px;">
           <article class="logo-panel">
             <p class="eyebrow">Build Level Sponsor</p>
-            <h3>REV Robotics</h3>
             <img class="tier-logo big-logo" src="assets/rev-sponsor.png" alt="REV Robotics sponsor logo" loading="lazy" decoding="async" />
           </article>
           <article class="logo-panel">
             <p class="eyebrow">Build Level Sponsor</p>
-            <h3>FIRST</h3>
             <img class="tier-logo big-logo" src="assets/first-sponsor.png" alt="FIRST sponsor logo" loading="lazy" decoding="async" />
           </article>
         </div>

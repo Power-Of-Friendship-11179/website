@@ -366,19 +366,15 @@ mount(
         <div class="sponsor-logos stagger-reveal">
           <div class="sponsor-logo">
             <img src="assets/nasa-logo.png" alt="NASA" loading="lazy" />
-            <span class="sponsor-tier">Power Level</span>
           </div>
           <div class="sponsor-logo">
             <img src="assets/argosy-foundation.png" alt="Argosy Foundation" loading="lazy" />
-            <span class="sponsor-tier">Alliance Level</span>
           </div>
           <div class="sponsor-logo">
             <img src="assets/rev-sponsor.png" alt="REV Robotics" loading="lazy" />
-            <span class="sponsor-tier">Build Level</span>
           </div>
           <div class="sponsor-logo">
             <img src="assets/first-sponsor.png" alt="FIRST" loading="lazy" />
-            <span class="sponsor-tier">Build Level</span>
           </div>
         </div>
         <div style="text-align:center; margin-top:36px;">
